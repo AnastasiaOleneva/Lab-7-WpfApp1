@@ -25,6 +25,24 @@ namespace Lab_7_WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            List<string> styles = new List<string>() { "Светлая тема", "Темная тема" };
+            ComboBoxStyle.ItemsSource = styles;
+            ComboBoxStyle.SelectedIndex = 0;
+            ComboBoxStyle.SelectionChanged += TeamChenged;
+        }
+
+        private void TeamChenged(object sender, SelectionChangedEventArgs e)
+        {
+            int styleIndex = ComboBoxStyle.SelectedIndex;
+            Uri uri = new Uri("White.xaml", UriKind.Relative);
+            if (styleIndex==1)
+            {
+                uri = new Uri("Dark.xaml", UriKind.Relative);
+            }
+            ResourceDictionary resource = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resource);
+
         }
 
         private void ExitExicute(object sender, ExecutedRoutedEventArgs e)

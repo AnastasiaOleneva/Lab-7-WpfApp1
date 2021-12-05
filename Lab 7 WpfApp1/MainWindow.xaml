@@ -44,10 +44,10 @@
             </Grid.RowDefinitions>
             <ToolBarTray Grid.Row="0">
                 <ToolBar Margin="5" Padding="5">
-                    <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" ItemsSource="{StaticResource FontFamily}" >
+                    <ComboBox x:Name="CBFontFamily" Margin="5" Padding="5" SelectedIndex="0" Width="200" ItemsSource="{StaticResource FontFamily}" >
                         
                     </ComboBox>
-                    <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" ItemsSource="{StaticResource FontSize}">
+                    <ComboBox x:Name="CBFontSize"  Margin="5" Padding="5" SelectedIndex="2" Width="50" ItemsSource="{StaticResource FontSize}">
                         
                     </ComboBox>
                     <ComboBox x:Name="ComboBoxStyle"  Margin="5" Padding="5"  Width="50">
@@ -78,7 +78,7 @@
                 </ToolBar>
 
             </ToolBarTray>
-            <TextBox x:Name="textBox" Grid.Row="1" Style="{DynamicResource TextBoxStyle}">
+            <TextBox x:Name="textBox" Grid.Row="1" Style="{DynamicResource TextBoxStyle}" FontFamily="{Binding ElementName= CBFontFamily, Path=SelectedItem }" FontSize="{Binding ElementName=CBFontSize, Path=SelectedItem}">
 
             </TextBox>
 

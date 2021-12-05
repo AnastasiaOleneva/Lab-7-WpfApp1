@@ -3,8 +3,8 @@
                     xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <col:ArrayList x:Key="FontSize">
-        <sys:String>8</sys:String>
-        <sys:String>9</sys:String>
-        <sys:String>11</sys:String>
+        <sys:String>16</sys:String>
+        <sys:String>25</sys:String>
+        <sys:String>30</sys:String>
     </col:ArrayList>
 </ResourceDictionary>

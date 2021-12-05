@@ -69,5 +69,6 @@ namespace Lab_7_WpfApp1
                 File.WriteAllText(saveFileDialog.FileName, textBox.Text);
             }
         }
+    
     }
 }
